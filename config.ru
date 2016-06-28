@@ -2,7 +2,6 @@
 
 require_relative 'config/environment'
 
-run Rails.application
 require 'rack'
 require 'rack/cors'
 use Rack::Cors do
@@ -11,3 +10,5 @@ use Rack::Cors do
     resource '/api/*', :headers => :any, :methods => :get
   end
 end
+
+run Rails.application
