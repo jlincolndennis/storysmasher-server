@@ -2,13 +2,4 @@
 
 require_relative 'config/environment'
 
-require 'rack'
-require 'rack/cors'
-# use Rack::Cors do
-#   allow do
-#     origins 'localhost:3000', 'https://storysmasher.firebaseapp.com/'
-#     resource '/api/*', :headers => :any, :methods => :get
-#   end
-# end
-
 run Rails.application
