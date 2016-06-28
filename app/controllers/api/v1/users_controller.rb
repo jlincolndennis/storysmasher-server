@@ -5,10 +5,11 @@ class API::V1::UsersController < ApplicationController
     render json: {users: allTheUsers}
   end
 
-  def myStories
-    me = User.find(session[:current_user_id])
+  def show
+    me = User.find(params[:id])
     myStories = me.stories
-    
+    render json: {user: me, stories: myStories}
+
   end
 
 end
