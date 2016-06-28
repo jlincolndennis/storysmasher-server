@@ -1,7 +1,14 @@
 class API::V1::UsersController < ApplicationController
 
   def index
-    render json: {message: 'Hello From The Rails Server!'}
+    allTheUsers = User.all
+    render json: {users: allTheUsers}
+  end
+
+  def myStories
+    me = User.find(session[:current_user_id])
+    myStories = me.stories
+    
   end
 
 end
