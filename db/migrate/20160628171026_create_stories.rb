@@ -3,8 +3,9 @@ class CreateStories < ActiveRecord::Migration[5.0]
     create_table :stories do |t|
       t.column :title, :string, :limit =>140
       t.column :body, :text
-      t.column :user_id, :integer
-      t.column :created_at, :timestamp
+      t.belongs_to :user
+      t.timestamps
+
     end
   end
 end

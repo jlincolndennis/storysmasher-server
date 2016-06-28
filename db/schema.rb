@@ -19,7 +19,9 @@ ActiveRecord::Schema.define(version: 20160628171026) do
     t.string   "title",      limit: 140
     t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["user_id"], name: "index_stories_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
