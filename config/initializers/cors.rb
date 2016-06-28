@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://storysmasher.firebaseapp.com/', 'localhost:3000'
+    origins 'https://storysmasher.firebaseapp.com/', 'http://localhost:5000'
 
     resource '*',
       headers: :any,
