@@ -1,4 +1,4 @@
-class StoryController < ApplicationController
+class API::V1::StoryController < ApplicationController
   def list
     @stories = Story.all
  end
