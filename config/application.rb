@@ -12,9 +12,12 @@ require "action_cable/engine"
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
 
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+# require 'rack'
+# require 'rack/cors'
 
 module Server
   class Application < Rails::Application
@@ -27,12 +30,12 @@ module Server
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-      origins 'localhost:3000', 'https://storysmasher.firebaseapp.com/'
-        resource '/api/*', :headers => :any, :methods => [:get, :post, :options]
-      end
-    end
+    # config.middleware.insert_before 0, Rack::Cors do
+    #   allow do
+    #   origins 'localhost:3000', 'https://storysmasher.firebaseapp.com/'
+    #     resource '/api/*', :headers => :any, :methods => [:get, :post, :options]
+    #   end
+    # end
 
   end
 end
