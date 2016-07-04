@@ -16,11 +16,17 @@ ActiveRecord::Schema.define(version: 20160628171026) do
   enable_extension "plpgsql"
 
   create_table "stories", force: :cascade do |t|
-    t.string   "title",      limit: 140
-    t.text     "body"
+    t.string   "title",       limit: 140
+    t.text     "paragraph_1"
+    t.text     "paragraph_2"
+    t.text     "paragraph_3"
+    t.text     "paragraph_4"
+    t.text     "paragraph_5"
+    t.text     "paragraph_6"
+    t.text     "paragraph_7"
     t.integer  "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.index ["user_id"], name: "index_stories_on_user_id", using: :btree
   end
 
