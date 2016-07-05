@@ -12,11 +12,16 @@
 
   end
 
-  def create
-    @user = User.new(user_param)
-    @user.save
-    render json: {user: @user}
+  def me
+    p "*"*30
+    p params
   end
+
+  # def create
+  #   @user = User.new(user_param)
+  #   @user.save
+  #   render json: {user: @user}
+  # end
 
   def user_param
      params.require(:user).permit(:username, :password)
