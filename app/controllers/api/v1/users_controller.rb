@@ -1,4 +1,4 @@
-class API::V1::UsersController < ApplicationController
+  class API::V1::UsersController < ApplicationController
 
   def index
     allTheUsers = User.all
