@@ -14,7 +14,15 @@
 
   def me
     p "*"*30
-    p params
+    # p request.headers['Authorization']
+
+    confirm = JsonWebToken.verify(request.headers['Authorization'], key: ENV['SECRET'])
+    p confirm[:ok]
+
+    render json: {'user': confirm[:ok]}
+      rescue
+        render json: {'error': 'invalid JWT'}
+      # end
   end
 
   # def create
