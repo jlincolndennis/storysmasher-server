@@ -4,8 +4,8 @@ class AuthController < ApplicationController
 
   def signup
     #  render :json => {jwt: "jwt"}
-    user = User.new(username: params[:username])
-    user.password = params[:password]
+    user = User.new(username: params[:user][:username])
+    user.password = params[:user][:password]
     if user.save
       jwt = JsonWebToken.sign({id: user.id}, key: ENV['SECRET'])
       # jwt = JsonWebToken.sign({id: user.id}, key: 'test')
@@ -16,8 +16,8 @@ class AuthController < ApplicationController
   end
 
   def signin
-    user = User.find_by(username: params[:username])
-    if user.password == params[:password]
+    user = User.find_by(username: params[:user][:username])
+    if user.password == params[:user][:password]
       jwt = JsonWebToken.sign({id: user.id}, key: ENV['SECRET'])
       # jwt = JsonWebToken.sign({id: user.id}, key: 'test')
       render :json => {id: user.id, username: user.username, jwt: jwt}
