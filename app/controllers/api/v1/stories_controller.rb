@@ -50,13 +50,13 @@ class API::V1::StoriesController < ApplicationController
       author: author.username,
       story: {
         title: story.title,
-        paragraph_1: story.paragraph_1,
-        paragraph_2: story.paragraph_2,
-        paragraph_3: story.paragraph_3,
-        paragraph_4: story.paragraph_4,
-        paragraph_5: story.paragraph_5,
-        paragraph_6: story.paragraph_6,
-        paragraph_7: story.paragraph_7
+        # paragraph_1: story.paragraph_1,
+        # paragraph_2: story.paragraph_2,
+        # paragraph_3: story.paragraph_3,
+        # paragraph_4: story.paragraph_4,
+        # paragraph_5: story.paragraph_5,
+        # paragraph_6: story.paragraph_6,
+        # paragraph_7: story.paragraph_7
         }}
 
   end
